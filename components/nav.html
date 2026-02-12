@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Boldonse&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      scroll-behavior: smooth;
+    }
+    .nav-links a.active-scroll {
+     color: #FFD700;
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      display: flex;
+      padding: 15px 0px 0px;
+      justify-content: center;
+      margin: 0;
+    }
+
+    .navbar .container {
+      display: flex;
+      justify-content: space-between;
+      width: 70%;
+      margin: 0;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      /* transparan putih */
+      border-radius: 40px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      /* efek kaca */
+      -webkit-backdrop-filter: blur(10px);
+      /* Safari */
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+      padding: 5px 15px 5px;
+    }
+
+    nav {
+      display: flex;
+      cursor: pointer;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: bold;
+      font-size: 30px;
+      color: white;
+    }
+
+    .logo img {
+      border-radius: 50%;
+      width: 70px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .nav-links a {
+      font-size: 18px;
+      color: white;
+      font-family: "Boldonse", system-ui;
+      text-decoration: none;
+    }
+    .nav-links a:hover{
+        color: #FFD700;
+    }
+
+    .nav-links .hidden-kontak {
+      display: none;
+    }
+
+    .btn-link {
+      display: flex;
+      align-items: center;
+    }
+
+    .container .btn {
+      background: white;
+      color: black;
+      padding: 0.5rem 1rem;
+      margin: 0 auto;
+      text-decoration: none;
+       font-family: "Boldonse", system-ui;
+      border-radius: 40px;
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: white;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background: #222;
+      top: 100%;
+      left: 0;
+      min-width: 150px;
+      z-index: 100;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 0.5rem;
+      color: white;
+      text-decoration: none;
+    }
+
+    .close-sidebar {
+      display: none;
+      font-size: 28px;
+      color: white;
+      text-align: right;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+
+    .nav-links img {
+      display: none;
+    }
+    
+    .showlink{
+        z-index: 1000;
+    }
+    .link-show{
+        padding-top: 30px
+        color: black;
+        position: absolute;
+        z-index: 1000;
+        flex-direction: column;
+        cursor: pointer;
+        padding: 10px;
+        display: flex;
+        
+         background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      /* transparan putih */
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      /* efek kaca */
+      -webkit-backdrop-filter: blur(10px);
+      /* Safari */
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    @media(max-width: 400px) and (min-width: 900px) {
+      .navbar .container .logo img {
+        width: 10 0px;
+      }
+    }
+
+    @media(min-width: 400px) and (max-width: 768px) {
+      .nav-links a {
+        font-size: 20px;
+        margin: 0px 0px 10px;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .navbar {
+        padding: 0;
+      }
+
+      .navbar .container {
+        padding: 10px 25px 10px;
+        width: 100%;
+        border-radius: 0;
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        background-color: rgb(11, 8, 36);
+        border: none;
+      }
+
+      .nav-links img {
+        display: flex;
+      }
+
+      .nav-links {
+        top: 0;
+        left: -100%;
+        width: 60%;
+        height: 100dvh;
+        margin: 0;
+        position: absolute;  background-color: rgb(11, 8, 36);
+        flex-direction: column;
+        border-radius: 0px 20px 20px 0px;
+        padding: 50px 20px 20px;
+        gap: 20px;
+        transition: left 0.3s ease-in-out;
+        z-index: 2000;
+      }
+
+      .nav-links.active {
+        left: 0;
+      }
+
+      .hidden-kontak {
+        display: flex;
+      }
+
+      .btn-link {
+        display: none;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+      .navbar .logo span {
+        font-size: 17px;
+      }
+
+      .dropdown-content {
+        position: static;
+      }
+
+      .close-sidebar {
+        display: block;
+        right: 0;
+        top: 10px;
+        position: absolute;
+      }
+
+      .logo img {
+        width: 50px;
+      }
+    }
+
+    @keyframes scaleUp {
+      to {
+        transform: scale(1);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        background: rgba(0, 0, 0, 0);
+      }
+
+      to {
+        background: rgba(0, 0, 0, 0.6);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="navbar">
+    <div class="container" id="navbar">
+      <div class="logo">
+        <img src="aset/logodz" alt="dz" />
+      </div>
+
+      <nav id="nav-menu" class="nav-links">
+        <div class="close-sidebar" onclick="toggleMenu()">✕</div>
+        <br>
+        <a href="#about">About</a>
+        <a href="#sertifikat">Award</a>
+        <a href="#Experience">Experience</a>
+        <a href="#portfolio">Portfolio</a>
+        <div class="show-link" x-data="{ show : false }">
+             <a @click="show = !show">Sosial Links</a>
+             
+            <div x-show="show" class="link-show">
+                <a href="https://www.linkedin.com/in/deris-hanggoro-a9016939b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">Linkendin</a>
+                <a href="https://www.fiverr.com/s/EgL3RW9">Fiver</a>
+                <a href="https://github.com/dejez30jr">github</a>
+                <a href="https://www.instagram.com/theriis_?igsh=MXBvNmlxdWpjbWpqZg%3D%3D">instagram</a>
+                <a href="aset/deris-cv.pdf" download class="download-btn">Download CV</a>
+            </div>
+        </div>
+        <a href="#footer" class="hidden-kontak">Contact</a>
+      </nav>
+
+      <div class="btn-link">
+        <a href="#footer" class="btn">Contact</a>
+      </div>
+
+      <div class="hamburger" onclick="toggleMenu()">☰</div>
+    </div>
+  </header>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("nav-menu");
+      menu.classList.toggle("active");
+    }
+
+    // Smooth scroll fix dan auto close di mobile
+    document.querySelectorAll("#nav-menu a[href^='#']").forEach(link => {
+      link.addEventListener("click", function (e) {
+        const target = document.querySelector(this.getAttribute("href"));
+        if (target) {
+          e.preventDefault();
+          window.scrollTo({
+            top: target.offsetTop - 80,
+            behavior: "smooth"
+          });
+          if (window.innerWidth <= 900) {
+            document.getElementById("nav-menu").classList.remove("active");
+          }
+        }
+      });
+    });
+    
+      // Highlight menu saat scroll ke section
+  const sections = document.querySelectorAll("section[id]");
+  const navLinks = document.querySelectorAll("#nav-menu a[href^='#']");
+
+  window.addEventListener("scroll", () => {
+    let currentSection = "";
+
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 100;
+      const sectionHeight = section.offsetHeight;
+      if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
+        currentSection = section.getAttribute("id");
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove("active-scroll");
+      if (link.getAttribute("href") === `#${currentSection}`) {
+        link.classList.add("active-scroll");
+      }
+    });
+  });
+
+
+    // window.onscroll = function () {
+    //   const navbar = document.getElementById('navbar');
+    //   if (document.documentElement.scrollTop > 700) {
+    //     navbar.style.background = "rgba(0,0,0,0.5)";
+    //   } else {
+    //     navbar.style.background = "none";
+    //   }
+    // }
+  </script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect</title>
+    <style>
+        .connect {
+            padding: 20px;
+            margin-top: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            /* transparan putih */
+            border-radius: 40px 40px 0px 0px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            /* efek kaca */
+            -webkit-backdrop-filter: blur(10px);
+            /* Safari */
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            color: white;
+        }
+
+        .text-area {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            font-family: "Boldonse", system-ui;
+            margin: auto;
+        }
+
+        .text-area h1 {
+            color: white;
+            font-size: 4rem;
+        }
+
+        .hire-btn {
+            background: white;
+            color: black;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 999px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .footer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            border-top: 1px solid #444;
+            color: white;
+            margin-top: 40px;
+            padding-top: 30px;
+            gap: 30px;
+        }
+
+        .brand {
+            flex: 1 1 300px;
+        }
+
+        .brand h2 {
+            margin: 0 0 10px;
+        }
+
+        .brand p {
+            font-size: 0.9rem;
+            color: white;
+        }
+
+        .socials {
+            margin-top: 10px;
+            font-size: 1.2rem;
+        }
+
+        .info {
+            display: flex;
+            flex: 2 1 500px;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .info div {
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .nav-bottom {
+            margin-top: 30px;
+            display: flex;
+            justify-content: flex-end;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .nav-bottom a {
+            color: white;
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+
+
+        @media (max-width: 768px) {
+            .text-area h1 {
+                font-size: 1.5rem;
+            }
+
+            .info {
+                flex-direction: column;
+            }
+
+            .text-area {
+                align-items: center;
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .nav-bottom {
+                justify-content: center;
+            }
+
+            .hire-btn {
+                align-self: center;
+                margin-top: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section class="connect" id="footer">
+        <div class="text-area">
+            <h1>Let's create your <br> first website</h1>
+            <button class="hire-btn">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdoZ4eMtKvCkfvA0daZdYbDZP4nf5qtg1Cq8oZKk-Ppt-8ySQ/viewform?usp=header"
+                    style="text-decoration: none;
+                color: black;">
+                    >> Hire Me Now!
+                </a>
+            </button>
+        </div>
+
+        <div class="footer">
+            <div class="brand">
+                <h2>Deris hanggoro</h2>
+                <p>I am a web developer who also covers UI/UX, front end, backend, and graphic design.</p>
+            </div>
+
+            <div class="info">
+                <div><strong>Address</strong><br>Central Jakarta<br>10570 Indonesia</div>
+                <div><strong>Follow my Acount</strong><br><a href="https://www.instagram.com/theriis_?igsh=MXBvNmlxdWpjbWpqZg==" style="color: white;">theriis_ (intagram)</a><br>@dz.codes (instagram)</div>
+                <div><strong>Email Address</strong><br>derisd414@gmail.com<br>derisd414@gmail.com</div>
+                <div><strong>Phone Number</strong><br>(0271) 131 4564 232<br>+6283105713174</div>
+            </div>
+        </div>
+
+        <div class="nav-bottom" id="footer">
+            <a href="#">Project</a>
+            <a href="#">Reward</a>
+            <a href="#">Features</a>
+            <a href="#">About Us</a>
+        </div>
+    </section>
+</body>
+
+</html>

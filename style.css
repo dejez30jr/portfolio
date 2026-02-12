@@ -1,0 +1,715 @@
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: "Kanit", sans-serif;
+        scroll-behavior: smooth;
+        background-color: rgb(11, 8, 36);
+    }
+
+    body::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* all section */
+    .about-section,
+    .banner-section,
+    .sertifikat-section,
+    .wrap,
+    .portfolio-section {
+        margin-top: 20px;
+    }
+
+    /* main content */
+    .rocket {
+        position: fixed;
+        top: 180px;
+        left: 10%;
+        transform: translate(-50%, 0) rotate(0deg);
+        opacity: 1;
+        transition: transform 0.1s ease-out, opacity 0.1s ease-out;
+        z-index: 1;
+        pointer-events: none;
+        color: #302b4d;
+        font-size: 10rem;
+        font-weight: bold;
+    }
+
+    /* hero-section */
+    .hero-section {
+        width: 100%;
+        height: 100dvh;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        position: relative;
+    }
+
+    .hero-section img {
+        width: 350px;
+        height: 400px;
+        transform: scale(1.1) rotate(20deg);
+        position: absolute;
+        object-fit: contain;
+        top: 20px;
+        right: 20px;
+        z-index: 2;
+        text-shadow: 0 5px 10px rgba(255, 255, 255, 0.3);
+        transition: transform 0.5s ease;
+        animation: floatUpDown 4s ease-in-out infinite;
+    }
+    
+    @keyframes floatUpDown {
+    0%   { transform: translateY(0) scale(1.1); }
+    50%  { transform: translateY(-20px) scale(1.1); }
+    100% { transform: translateY(0) scale(1.1); }
+    }
+
+    .hero-section img:hover {
+        transition: 1s;
+        transform: rotate(10deg);
+        content: url('aset/hoverimg.png');
+    }
+
+    .text-hero {
+        position: absolute;
+        bottom: 60px;
+        left: 20px;
+        z-index: 3;
+    }
+
+    .text-hero h1 {
+        color: white;
+        font-family: "Boldonse", system-ui;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 5rem;
+    }
+
+    .hero-section a {
+        padding: 10px 20px 10px;
+        border-radius: 10px;
+        font-size: 25px;
+        background-color: tomato;
+        color: white;
+        margin-top: 20px;
+        text-decoration: none;
+    }
+
+    /* media quero max end min khusus device 400 */
+    @media(min-width: 1550px) {
+        .text-hero h1 {
+            font-size: 6rem;
+        }
+    }
+
+    @media (min-width: 400px) and (max-width: 600px) {
+        .pemrograman-card {
+            font-size: 1.5rem;
+            padding: 15px;
+        }
+    }
+
+    @media (max-width: 800px) {
+        .hero-section .text-hero {
+            padding: 0px 20px 20px;
+            position: static;
+        }
+
+        .rocket {
+            font-size: 5rem;
+            left: 20%;
+            top: 150px;
+        }
+
+        .hero-section img {
+            width: 200px;
+            height: 200px;
+            transform: scale(0.9);
+            margin-left: 50%;
+            position: static;
+            animation: floatUpDown 4s ease-in-out infinite;
+        }
+    
+        @keyframes floatUpDown {
+           0%   { transform: translateY(0) scale(0.9); }
+           50%  { transform: translateY(-20px) scale(0.9); }
+           100% { transform: translateY(0) scale(0.9); }
+        }
+
+    }
+
+    /* pemog langgue */
+    .pemrograman-container {
+        overflow: hidden;
+        white-space: nowrap;
+        box-sizing: border-box;
+        padding: 20px 0;
+        background: #0b0824;
+    }
+
+    .pemrograman-track {
+        position: relative;
+        z-index: 4;
+        display: inline-block;
+        animation: scroll 20s linear infinite;
+    }
+
+    .pemrograman-card {
+        display: inline-block;
+        width: 150px;
+        padding: 10px;
+        color: white;
+        margin: 0 10px;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        border-radius: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        text-align: center;
+        font-weight: bold;
+        font-size: 1rem;
+    }
+
+    @keyframes scroll {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(-50%);
+        }
+    }
+
+    @media (max-width: 600px) {
+        .pemrograman-card {
+            width: 100px;
+            font-size: 0.9rem;
+        }
+    }
+
+    /* about section */
+    .about-section {
+        width: 100%;
+        margin-top: 30px;
+        padding: 0px 20px 10px;
+        position: relative;
+        z-index: 3;
+    }
+
+    .about-judul {
+        flex: 1 1 100%;
+        font-size: 40px;
+        color: white;
+        text-align: right;
+        font-family: "Boldonse", system-ui;
+        position: relative;
+        z-index: 2;
+    }
+
+    .about-text {
+        flex: 1 1 300px;
+        font-size: 30px;
+        line-height: 1.6;
+        font-weight: bold;
+        transition: 1s;
+        cursor: pointer;
+        position: relative;
+        z-index: 4;
+        text-align: right;
+        color: white;
+    }
+
+    .quote-about {
+        position: absolute;
+        top: -150px;
+        left: 20px;
+        z-index: -1;
+        color: #302b4d;
+        font-size: 15rem;
+        font-weight: bold;
+    }
+
+    /*experince*/
+    :root {
+        --bg: #f7f8fb;
+        --card: #ffffff;
+        --muted: #6b7280;
+        --accent: #4f46e5;
+        --radius: 14px;
+        --gap: 18px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .wrap {
+        width: 100%;
+        padding: 50px 50px 40px;
+    }
+
+    .penglaman-section {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        color: white;
+        background: red;
+        position: relative;
+        z-index: 3;
+    }
+
+    .judul-Experience {
+        flex: 1 1 100%;
+        font-size: 40px;
+        width: 100%;
+        margin-bottom: 20px;
+        font-family: "Boldonse", system-ui;
+        color: white;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .exp-card {
+        background: var(--card);
+        border-radius: var(--radius);
+        box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+        padding: 18px;
+        display: flex;
+        gap: 14px;
+        align-items: flex-start;
+        transition: .2s ease;
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+    }
+
+    .exp-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 24px rgba(15, 23, 42, 0.1);
+    }
+
+    .exp-left {
+        flex: 0 0 70px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .exp-left .icon-wrap {
+        width: 56px;
+        height: 56px;
+        border-radius: 12px;
+        background: linear-gradient(180deg, #eef2ff, #eef8ff);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 8px;
+        font-size: 26px;
+    }
+
+    .exp-left time {
+        font-size: 12px;
+        color: var(--muted);
+    }
+
+    .exp-body h3 {
+        margin: 0;
+        font-size: 16px;
+        color: #0f172a;
+    }
+
+    .exp-body .role {
+        margin: 6px 0 10px;
+        font-size: 14px;
+        color: var(--muted);
+    }
+
+    .exp-body p {
+        margin: 0;
+        font-size: 14px;
+        line-height: 1.5;
+        color: #374151;
+    }
+    .exp-body .hidden-li {
+        display: none;
+    }
+    .tags {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-top: 10px;
+    }
+
+    .tag {
+        background: #f3f4f6;
+        padding: 5px 10px;
+        border-radius: 20px;
+        font-size: 12px;
+        color: #374151;
+        border: 1px solid white;
+    }
+
+    @media (min-width: 720px) end (max-width: 900px) {
+        .grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    /* our sertifkat */
+    .sertifikat-section {
+        width: 100%;
+        padding: 40px 50px 40px;
+        display: flex;
+        flex-wrap: wrap;
+        color: white;
+        position: relative;
+        z-index: 3;
+    }
+
+    .judul-sertifikat {
+        flex: 1 1 100%;
+        font-size: 40px;
+        width: 100%;
+        margin-bottom: 20px;
+        font-family: "Boldonse", system-ui;
+    }
+
+    .accordion-wrapper {
+        width: 100%;
+        position: relative;
+    }
+
+    .accordion-container {
+        border-radius: 10px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .accordion-item {
+        position: relative;
+        padding: 20px;
+        border-bottom: 1px solid #ddd;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+
+    .accordion-header {
+        font-size: 2.2rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-family: "Boldonse", system-ui;
+        font-weight: bold;
+    }
+
+    .accordion-content {
+        max-height: 0;
+        font-weight: bold;
+        font-size: 30px;
+        overflow: hidden;
+        transition: max-height 0.4s ease;
+        padding-top: 10px;
+    }
+
+    .accordion-item.active .accordion-content {
+        max-height: 200px;
+    }
+
+    /* Gambar */
+    .hover-image {
+        position: absolute;
+        width: 180px;
+        height: auto;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-20px) scale(0.9);
+        transition: opacity 0.4s ease, transform 0.4s ease;
+        z-index: 20;
+    }
+
+    /* portfolio section */
+    .portfolio-section {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        display: grid;
+        padding: 40px 50px 40px;
+        flex-wrap: wrap;
+    }
+
+    .judul-portfolio {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 40px;
+        width: 100%;
+        font-family: "Boldonse", system-ui;
+        color: white;
+    }
+
+    .judul-portfolio a {
+        text-decoration: none;
+        font-size: 20px;
+        border: 1px solid rgb(19, 48, 102);
+        border-radius: 10px;
+        padding: 10px;
+    }
+
+    .box-portfolio {
+        justify-content: center;
+        flex-direction: column;
+        position: relative;
+        grid-template-columns: repeat(3, 1fr);
+        width: 100%;
+    }
+
+    .card-portfolio {
+        transform-style: preserve-3d;
+        will-change: transform;
+        transition: transform .5s;
+        top: 60px;
+        margin-top: 10px;
+        position: sticky;
+    }
+
+    .box-portfolio .card-portfolio {
+        transition: 2s;
+    }
+
+    .card-portfolio img {
+        width: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+    .box-portfolio {
+        align-items: start;
+    }
+
+    .card-portfolio {
+        overflow: hidden;
+    }
+
+    .card-portfolio img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    .overlay-portfolio {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background: rgba(0, 0, 0, 0.68);
+        color: #fff;
+        opacity: 0;
+        transform: translateY(8px);
+        transition: opacity .32s ease, transform .32s ease;
+        pointer-events: none;
+        padding: 16px;
+        box-sizing: border-box;
+    }
+
+    .card-portfolio:hover .overlay-portfolio,
+    .card-portfolio:focus-within .overlay-portfolio {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+    }
+
+    /* teks overlay */
+    .overlay-portfolio h3 {
+        margin: 0 0 8px;
+        font-size: 30px;
+        line-height: 1.1;
+    }
+
+    .overlay-portfolio span {
+        color: white;
+        display: flex;
+        gap: 10px;
+    }
+    .overlay-portfolio span p {
+       background-color: white;
+       color: black;
+       padding: 10px;
+       border-radius: 10px;
+    }
+
+    .overlay-portfolio p {
+        margin: 0 0 10px;
+        font-size: 13px;
+        max-width: 90%;
+    }
+
+    .overlay-portfolio .tech {
+        font-size: 12px;
+        padding: 6px 10px;
+        border-radius: 6px;
+        background: rgba(255, 255, 255, 0.08);
+    }
+
+
+    @media (max-width: 800px) {
+
+        /* all section */
+        section {
+            padding: 0px;
+        }
+
+        .about-section,
+        .banner-section,
+        .sertifikat-section,
+        .blog-section,
+        .portfolio-section {
+            padding: 20px 15px 10px;
+        }
+
+        /* hero section */
+        .hero-section .text-hero {
+            padding: 0px 20px 20px;
+            position: static;
+        }
+
+        .hero-section img {
+            width: 100%;
+            position: static;
+            object-fit: contain;
+        }
+
+        .hero-section {
+            position: static;
+            flex-wrap: wrap-reverse;
+            padding: 20px 0px 0px;
+            gap: 20px;
+            height: auto;
+            overflow: hidden;
+        }
+
+        .hero-section h1 {
+            font-size: 3em;
+        }
+
+        .text-hero a {
+            font-size: 20px;
+        }
+
+        /* about section */
+        .about-section .about-judul {
+            font-size: 13px;
+        }
+
+        .about-section .about-text {
+            font-size: 16px;
+            line-height: 1.6;
+            z-index: 5;
+        }
+
+        .about-section .about-image {
+            width: 100%;
+        }
+
+        .quote-about {
+            top: -100px;
+            left: 8px;
+            font-size: 7rem;
+        }
+
+        .box-service {
+            padding: 0px 15px 0px;
+        }
+
+        /* sertifikat section */
+        .sertifikat-section .judul-sertifikat {
+            font-size: 13px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .accordion-header {
+            font-size: 1.2rem;
+        }
+
+        .accordion-content {
+            font-size: 16px;
+        }
+
+        .accordion-item {
+            padding: 20px 10px 10px;
+             background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .hover-image {
+            width: 120px;
+        }
+
+        /*experinece*/
+        .wrap {
+            padding: 30px 15px 0px;
+        }
+
+        .judul-Experience {
+            font-size: 13px;
+        }
+
+        .grid {
+            grid-template-columns: repeat(1, 1fr);
+        }
+
+        /* portfolio section */
+        .portfolio-section .judul-portfolio {
+            font-size: 13px;
+        }
+
+        .judul-portfolio a {
+            font-size: 16px;
+            padding: 5px;
+        }
+
+        .box-portfolio {
+            width: 100%;
+            gap: 10px;
+            padding: 10px 0px 0px;
+            justify-content: start;
+            grid-template-columns: 1fr 1fr;
+            flex-direction: column;
+        }
+
+        .box-portfolio .card-portfolio {
+            width: 100%;
+            gap: 10px;
+        }
+
+        .card-portfolio img {
+            width: 100%;
+        }
+        .overlay-portfolio h3 {
+            font-size: 18px;
+        }
+        .overlay-portfolio p {
+            font-size: 12px;
+        }
+        .overlay-portfolio span p {
+            font-size: 12px;
+            padding: 5px;
+        }
+
+    }
+
+    /* 319px */
+    @media (max-width: 480px) {
+        .hero-section h1 {
+            font-size: 30px;
+        }
+    }
